@@ -11,18 +11,22 @@ const student2 = {
 
 const studentArray = [student1, student2];
 console.log(student1);
-console.log(JSON.stringify(studentArray)); // ohne stringify gibt web browser hier schon den updated Array aus. In CodePen sollte es auch ohne stringify funktionieren
+console.log("Before updating:", JSON.parse(JSON.stringify(studentArray))); // ohne stringify gibt web browser hier schon den updated Array aus. In CodePen sollte es auch ohne stringify funktionieren
 
-console.log("Now student2 will be updated:")
+
 function updateStudentName (myArray, id, newName) {
     const foundStudent = myArray.find(element => element.id === id);
-    foundStudent.name = newName;
+    if(foundStudent) {
+        foundStudent.name = newName;
+    }
 }
 
 updateStudentName(studentArray, 2, "Tim Henry Burton");
+console.log("Now student2 will be updated:")
 console.log(studentArray);
 
-console.log("Now student1 will be replaced:")
+
+
 function renameStudentByReplace (myArray, id, newName) {
     const foundStudent = myArray.find(element => element.id === id);
     const index = myArray.findIndex(element => element.id === id);
@@ -31,6 +35,7 @@ function renameStudentByReplace (myArray, id, newName) {
 }
 
 renameStudentByReplace(studentArray, 1, "Lara Miller");
+console.log("Now student1 will be replaced:")
 console.log(studentArray);
 
 
