@@ -4,8 +4,8 @@ const characters = charactersFullJSON.results;
 //console.log(characters[0]);
 
 /* Exercise 1 ------------------------------------------------------- */
-function getAlive (myArray) {
-   return myArray.filter(element => element.status === "Alive");
+function getAlive(characters) {
+   return characters.filter(character => character.status === "Alive");
 }
 console.log("Number of characters: ", characters.length);
 const charactersAlive = getAlive(characters);
@@ -14,17 +14,17 @@ console.log("Number of alive characters: ", charactersAlive.length);
 
 
 /* Exercise 2 ------------------------------------------------------- */
-function getNames (myArray) {
-   return myArray.map(element => element.name);
+function getNames(characters) {
+   return characters.map(character => character.name);
 }
 console.log(getNames(characters));
 
 
 
 /* Exercise 3 ------------------------------------------------------- */
-const getNameOrigin = (myArray) =>
-    myArray.map(element => {
-      return {name: element.name, origin: element.origin}
+const getNameOrigin = (characters) =>
+    characters.map(character => {
+      return {name: character.name, origin: character.origin.name}
    });
 
 console.log(getNameOrigin(characters));
