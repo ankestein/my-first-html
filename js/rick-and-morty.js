@@ -4,11 +4,11 @@ const characters = charactersFullJSON.results;
 //console.log(characters[0]);
 
 /* Exercise 1 ------------------------------------------------------- */
-function getAlive(characters) {
-   return characters.filter(character => character.status === "Alive");
+function getAliveHumans(characters) {
+   return characters.filter(character => character.status === "Alive" && character.species === "Human");
 }
 console.log("Number of characters: ", characters.length);
-const charactersAlive = getAlive(characters);
+const charactersAlive = getAliveHumans(characters);
 console.log("Number of alive characters: ", charactersAlive.length);
 
 
