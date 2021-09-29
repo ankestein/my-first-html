@@ -7,7 +7,6 @@ const promise = fetch("https://rickandmortyapi.com/api/character")
         }
         throw `error: ${response.status}`
     })
-    //.then(() => console.log("fulfilled"))
     .then(json => json.results)
     .then((json) => {
         console.log(getAliveHumans(json))
