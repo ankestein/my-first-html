@@ -39,3 +39,17 @@ console.log("Now student1 will be replaced:")
 console.log(studentArray);
 
 
+// Florians Version für renameStudentByReplace:
+function renameImmutable(studentArray, studentId, newName) {
+    return studentArray.map(student => {
+        if (student.id === studentId) {
+            return {...student, name: newName}
+        }
+        return student
+    })
+}
+
+console.log('before immutable', JSON.parse(JSON.stringify(studentArray)))
+const newStudents = renameImmutable(studentArray, 2, 'Ludmilla')
+console.log('after immutable', JSON.parse(JSON.stringify(studentArray)))
+console.log('copied students', newStudents)
