@@ -24,7 +24,10 @@ console.log(getNames(characters));
 /* Exercise 3 ------------------------------------------------------- */
 const getNameOrigin = (characters) =>
     characters.map(character => {
-      return {name: character.name, origin: character.origin.name}
+      return {
+          name: character.name,
+          origin: character.origin.name
+      }
    });
 
 console.log(getNameOrigin(characters));
